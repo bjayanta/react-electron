@@ -1,7 +1,7 @@
 create react app:
 ---------------------------------------------
 > npx create-react-app react-electron
-> yarn add electron concurrently wait-on cross-env
+> yarn add electron concurrently wait-on cross-env --dev
 
 in scripts:
 ----------------------------------------------
