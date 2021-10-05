@@ -7,11 +7,15 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.22.0",
     "bootstrap": "^5.1.1",
+    "cors": "^2.8.5",
     "electron-is-dev": "^2.0.0",
+    "express": "^4.17.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
+    "sequelize": "^6.6.5",
     "web-vitals": "^1.0.1"
   },
   "main": "public/main.js",
@@ -21,7 +25,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "electron:serve": "concurrently -k \"cross-env BROWSER=none yarn start\" \"yarn electron:start\"",
+    "electron:serve": "concurrently -k \"node server/index.js\" \"cross-env BROWSER=none yarn start\" \"yarn electron:start\"",
     "electron:build": "yarn build && electron-builder -c.extraMetadata.main=build/main.js",
     "electron:start": "wait-on tcp:3000 && electron ."
   },
@@ -61,6 +65,7 @@
     "cross-env": "^7.0.3",
     "electron": "^15.1.0",
     "electron-builder": "^22.11.7",
+    "nodemon": "^2.0.13",
     "wait-on": "^6.0.0"
   }
 }
