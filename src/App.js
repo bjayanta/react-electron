@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = "http://localhost:8080/maxsop";
+const baseURL = "http://localhost:8080/posts";
 
 function App() {
   axios.get(baseURL).then((response) => {

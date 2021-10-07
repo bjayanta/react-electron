@@ -12,6 +12,9 @@
 /build
 /dist
 
+# server 
+/server/node_modules
+
 # misc
 .DS_Store
 .env.local

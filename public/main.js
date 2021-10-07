@@ -9,15 +9,18 @@ require('@electron/remote/main').initialize()
 function createWindow() {
     // Create the brower window.
     const win = new BrowserWindow({
-        width: 800,
-        height: 600,
+        width: 1200,
+        height: 768,
+        minWidth: 1024,
+        minHeight: 768,
+        // frame: false,
         webPreferences: {
             nodeIntegration: true,
             enableRemoteModule: true
         }
     });
 
-    win.loadURL('http://localhost:3000');
+    // win.loadURL('http://localhost:3000');
     win.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../build/index.html')}`);
 }
 

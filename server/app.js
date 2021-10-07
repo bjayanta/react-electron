@@ -9,13 +9,17 @@ app.use(
     })
 );
 
-app.get('/', (request, response) => {
-    response.send("Hello World!");
-});
+const postsRoute = require('./routes/posts');
+app.use('/posts', postsRoute);
 
-app.get('/maxsop', (request, response) => {
-    let names = JSON.stringify(["Joy", "Tarikul", "Jayanta"]);
-    response.send(names);
-});
+
+// app.get('/', (request, response) => {
+//     response.send("Hello World!");
+// });
+
+// app.get('/maxsop', (request, response) => {
+//     let names = JSON.stringify(["Joy", "Tarikul", "Jayanta"]);
+//     response.send(names);
+// });
 
 module.exports = app;
