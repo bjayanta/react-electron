@@ -9,8 +9,11 @@ app.use(
     })
 );
 
-const postsRoute = require('./routes/posts');
+const postsRoute = require('./routes/contacts');
 app.use('/posts', postsRoute);
+
+const partiesRoute = require('./routes/parties');
+app.use('/parties', partiesRoute);
 
 
 // app.get('/', (request, response) => {

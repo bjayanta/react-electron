@@ -34,4 +34,21 @@ Object.keys(db).forEach(modelName => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
+// One to Many polymorphic relation
+db.party = require('./party')(sequelize, Sequelize.DataTypes);
+db.contact = require('./contact')(sequelize, Sequelize.DataTypes);
+
+db.party.hasMany(db.contact, {
+  foreignKey: 'contactableId',
+  constraints: false,
+  scope: {
+    contactableType: 'party'
+  }
+});
+
+db.contact.belongsTo(db.party, {
+  foreignKey: 'contactableId',
+  constraints: false
+});
+
 module.exports = db;
