@@ -5,4 +5,6 @@ const port = 8080;
 // create server
 const server = http.createServer(app);
 
-server.listen(port);
+server.listen(port, () => {
+    console.log("Server running at htttp://localhost:" + port + "/");
+});

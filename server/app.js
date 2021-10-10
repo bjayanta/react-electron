@@ -15,7 +15,6 @@ app.use('/posts', postsRoute);
 const partiesRoute = require('./routes/parties');
 app.use('/parties', partiesRoute);
 
-
 // app.get('/', (request, response) => {
 //     response.send("Hello World!");
 // });
